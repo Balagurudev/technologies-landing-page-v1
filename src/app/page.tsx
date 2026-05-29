@@ -10,6 +10,7 @@ import {
   AlarmBanner
 } from "@/shared/ui/CircuitSystem";
 import { DynamicFrameLayout } from "@/shared/ui/DynamicFrameLayout";
+import { DualWaveProjects } from "@/shared/ui/DualWaveProjects";
 
 export default function Home() {
   return (
@@ -32,30 +33,18 @@ export default function Home() {
         ]} />
 
         {/* PROJECT REFERENCES & BULLETIN */}
-        <section style={{ padding: "100px 48px", background: "var(--circuit-bg)", borderBottom: "1px solid var(--circuit-line)" }}>
-          <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+        <section style={{ padding: "100px 0", background: "var(--circuit-bg)", borderBottom: "1px solid var(--circuit-line)", overflow: "hidden" }}>
+          <div style={{ maxWidth: 1400, margin: "0 auto", padding: "0 48px" }}>
             <div className="mono" style={{ fontSize: 12, color: "var(--circuit-ink-3)", letterSpacing: "0.04em", marginBottom: 16 }}>SECT.01 / PROJECT REFERENCES</div>
-            <h2 style={{ fontSize: 36, lineHeight: 1, letterSpacing: "-0.02em", fontWeight: 500, margin: "0 0 44px" }}>International & Domestic Projects</h2>
+            <h2 style={{ fontSize: 36, lineHeight: 1, letterSpacing: "-0.02em", fontWeight: 500, margin: "0 0 64px" }}>International & Domestic Projects</h2>
+          </div>
             
-            <div style={{ display: "grid", gridTemplateColumns: "1.5fr 1fr", gap: 32 }}>
-              <div style={{ background: "var(--circuit-panel)", border: "1px solid var(--circuit-line)", borderRadius: 12, padding: 32, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                <div className="mono" style={{ color: "var(--circuit-signal)", marginBottom: 16 }}>VIVA Bahriya VB-22</div>
-                <div style={{ fontSize: 24, color: "var(--circuit-ink)" }}>LOCATION: Qatar, The Pearl</div>
-                <div style={{ marginTop: 24, display: "flex", gap: 12 }}>
-                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--circuit-signal)" }} />
-                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--circuit-line)" }} />
-                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: "var(--circuit-line)" }} />
-                </div>
-              </div>
-
-              <div style={{ background: "var(--circuit-panel)", border: "1px solid var(--circuit-line)", borderRadius: 12, padding: 32 }}>
-                <div className="mono" style={{ color: "var(--circuit-ink-2)", marginBottom: 24, fontSize: 14 }}>BULLETIN BOARD</div>
-                <AlarmBanner type="info" title="METRO PROJECT" message="Execution of 4 Months by the Team of 15 R&D Engineers - Programmed, Designed & Tested @ Technologics Global Research Lab Bengaluru." />
-              </div>
-            </div>
+          <DualWaveProjects />
+            
+          <div style={{ marginTop: 64, maxWidth: 800, margin: "64px auto 0", padding: "0 48px" }}>
+            <AlarmBanner type="info" title="METRO PROJECT" message="Execution of 4 Months by the Team of 15 R&D Engineers - Programmed, Designed & Tested @ Technologics Global Research Lab Bengaluru." />
           </div>
         </section>
-
         {/* WHY TECHNOLOGICS / STATS */}
         <section style={{ padding: "100px 48px", background: "var(--circuit-panel)", color: "var(--circuit-ink)", position: "relative", overflow: "hidden", borderBottom: "1px solid var(--circuit-line)" }}>
           <div style={{ position: "relative", maxWidth: 1180, margin: "0 auto", textAlign: "center" }}>
