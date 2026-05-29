@@ -40,10 +40,6 @@ export default function Home() {
           </div>
             
           <DualWaveProjects />
-            
-          <div style={{ marginTop: 64, maxWidth: 800, margin: "64px auto 0", padding: "0 48px" }}>
-            <AlarmBanner type="info" title="METRO PROJECT" message="Execution of 4 Months by the Team of 15 R&D Engineers - Programmed, Designed & Tested @ Technologics Global Research Lab Bengaluru." />
-          </div>
         </section>
         {/* WHY TECHNOLOGICS / STATS */}
         <section style={{ padding: "100px 48px", background: "var(--circuit-panel)", color: "var(--circuit-ink)", position: "relative", overflow: "hidden", borderBottom: "1px solid var(--circuit-line)" }}>
