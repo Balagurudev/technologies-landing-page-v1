@@ -1,0 +1,164 @@
+:root {
+    /* Surfaces */
+    --bg:        var(--color-circuit-bg);
+    --bg-2:      var(--color-circuit-bg-2);
+    --line:      var(--color-circuit-line);
+    --line-2:    var(--color-circuit-line-2);
+    --ink:       var(--color-circuit-ink);
+    --ink-2:     var(--color-circuit-ink-2);
+    --ink-3:     var(--color-circuit-ink-3);
+
+    /* Instrument panels */
+    --panel:     var(--color-circuit-panel);
+    --panel-2:   var(--color-circuit-panel-2);
+    --panel-line:var(--color-circuit-panel-line);
+    --panel-ink: var(--color-circuit-ink);
+    --panel-dim: var(--color-circuit-panel-dim);
+
+    /* Signals */
+    --red:       var(--color-circuit-signal);
+    --red-deep:  var(--color-brand-800);
+    --amber:     var(--color-circuit-copper);
+    --green:     var(--color-brand-500);
+    --blue:      var(--color-brand-600);
+    --steel:     var(--color-circuit-ink-3);
+
+    --r-1: 6px;
+    --r-2: 10px;
+    --r-3: 16px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Geist", ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .mono { font-family: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace; }
+
+  /* ---------- App layout ---------- */
+  .app { max-width: 1280px; margin: 0 auto; }
+  .pad { padding: 0 48px; }
+
+  /* ---------- Topbar ---------- */
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 48px;
+    border-bottom: 1px solid var(--line);
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 30px; height: 30px; border-radius: 6px;
+    background: var(--ink);
+    display: grid; place-items: center;
+    color: white;
+  }
+  .brand-name { font-weight: 600; letter-spacing: -0.01em; font-size: 15px; }
+  .brand-name span { color: var(--ink-3); font-weight: 400; }
+  .topnav { display: flex; gap: 28px; font-size: 13px; color: var(--ink-2); }
+  .topnav a { color: inherit; text-decoration: none; }
+  .topnav a:hover { color: var(--ink); }
+  .topbar .meta { display: flex; align-items: center; gap: 14px; font-size: 12px; color: var(--ink-3); }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border: 1px solid var(--line-2); border-radius: 999px;
+    font-size: 11px; color: var(--ink-2);
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px color-mix(in oklch, var(--green) 25%, transparent); }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 88px 48px 64px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "Geist Mono", monospace; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .eyebrow::before { content: ""; width: 18px; height: 1px; background: currentColor; opacity: 0.6; }
+  .h1 {
+    font-size: 76px; line-height: 0.96; letter-spacing: -0.035em;
+    margin: 18px 0 24px; font-weight: 500; max-width: 980px;
+    text-wrap: balance;
+  }
+  .h1 em { font-style: normal; color: var(--red); }
+  .lede { font-size: 18px; color: var(--ink-2); max-width: 640px; line-height: 1.5; }
+
+  .hero-grid {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  /* ---------- Section chrome ---------- */
+  .section { padding: 96px 48px; border-bottom: 1px solid var(--line); }
+  .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-bottom: 44px; }
+  .section-title { font-size: 36px; line-height: 1; letter-spacing: -0.02em; font-weight: 500; margin: 8px 0 0; }
+  .section-sub { color: var(--ink-2); max-width: 520px; font-size: 15px; line-height: 1.5; }
+  .index-num { font-family: "Geist Mono", monospace; font-size: 12px; color: var(--ink-3); letter-spacing: 0.04em; }
+
+  /* ---------- Card primitives ---------- */
+  .card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: var(--r-3);
+    overflow: hidden;
+  }
+  .card-pad { padding: 24px; }
+  .card-label {
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: "Geist Mono", monospace; font-size: 11px;
+    color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .card-label .tag {
+    padding: 2px 8px; border-radius: 4px; background: var(--bg-2); border: 1px solid var(--line);
+    font-size: 10px;
+  }
+
+  /* dark instrument card */
+  .card.dark { background: var(--panel); color: var(--panel-ink); border-color: var(--panel-line); }
+  .card.dark .card-label { color: var(--panel-dim); }
+  .card.dark .card-label .tag { background: var(--panel-2); border-color: var(--panel-line); color: var(--panel-ink); }
+
+  /* ---------- Tape (running text bar) ---------- */
+  .tape {
+    display: flex; gap: 36px;
+    font-family: "Geist Mono", monospace; font-size: 11px; letter-spacing: 0.08em;
+    color: var(--ink-3); text-transform: uppercase;
+    padding: 14px 48px;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    background: var(--bg-2);
+    overflow: hidden; white-space: nowrap;
+  }
+  .tape span::before { content: "▸  "; color: var(--red); }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 56px 48px 80px; }
+  footer .row { display: flex; justify-content: space-between; align-items: center; }
+  footer .legal { color: var(--ink-3); font-size: 12px; font-family: "Geist Mono", monospace; }
+
+  /* ---------- Generic helpers ---------- */
+  .grid { display: grid; gap: 16px; }
+  .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .grid.cols-6 { grid-template-columns: repeat(6, 1fr); }
+  .flex { display: flex; }
+  .flex.center { align-items: center; justify-content: center; }
+  .stack { display: flex; flex-direction: column; gap: 12px; }
+
+  /* keep landing page text content out of focus accent areas */
+  ::selection { background: color-mix(in oklch, var(--red) 25%, transparent); color: var(--ink); }
+
+  /* small label under each interactive */
+  .specimen-name { font-family: "Geist Mono", monospace; font-size: 11px; color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.06em; }
+  .specimen-cap { font-size: 12px; color: var(--ink-2); margin-top: 4px; }
+
+  /* Print/safety: keep buttons from getting browser focus rings out of system */
+  button { font-family: inherit; }
+  button:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
